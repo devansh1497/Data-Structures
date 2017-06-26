@@ -1,0 +1,47 @@
+
+public class Edits {
+	boolean findEdit(String a , String b) {
+		int count = 0;
+		
+		if(Math.abs(a.length()-b.length())>1) {
+			return false;
+		}
+		
+		else if(a.length() == b.length()) {
+			for(int i = 0 ; i < a.length() ; i++) {
+				if(a.charAt(i) != b.charAt(i)) {
+					count++;
+				}
+			}
+			if(count <= 1) {
+				return true;
+			}
+			
+		}
+		else {
+			int j = 0;
+			int i= 0;
+			while(i<a.length() && j<b.length()) {
+				if(a.charAt(i) == b.charAt(j)) {
+					i++;
+					j++;
+				}
+				else {
+					i++;
+					count++;
+				}
+			}
+			if(count <= 1) {
+				return true;
+			}
+		}
+		return false;
+		
+	}
+	public static void main(String args[]) {
+		Edits e = new Edits();
+		System.out.println(e.findEdit("pale", "bake"));
+		
+	}
+
+}
