@@ -1,0 +1,29 @@
+import java.util.*;
+
+public class Unique {
+	
+	Hashtable<Character,Integer> hash = new Hashtable<Character,Integer>();
+	
+	boolean checkUnique(String s) {
+		
+		for(int i=0;i<s.length();i++) {
+			char c = s.charAt(i);
+			if(hash.containsKey(c)) {
+				return false;
+			}
+			else {
+				hash.put(c, 1);
+			}
+		}
+		return true;
+	}
+	
+	
+	
+	
+	public static void main(String args[]) {
+		Unique q = new Unique();
+		String s = "Hello";
+		
+	}
+}
